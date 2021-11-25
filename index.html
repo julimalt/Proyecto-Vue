@@ -11,36 +11,13 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <link href="./css/style.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script defer src="./js/app.js"></script>
   </head>
   <body>
-    <div class="container" id="app">
-      <div class="row justify-content-center">
-        <div class="col-md-4" style="margin-top: 10em">
-          <h3>Resultado: <span>{{result}}</span></h3>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-md-4">
-          <button type="button" @click="add" class="btn btn-outline-success">
-            Sumar
-          </button>
-          <button type="button" @click="subtract" class="btn btn-outline-danger">
-            Restar
-          </button>
-        </div>
-      </div>
-      <div class="row justify-content-center" style="padding-top: 2em">
-        <div class="col-md-4">
-          <p>
-            Cantidad de clicks:<span class="bg-info text-dark"></span>
-              {{clicks}}</span
-            >
-          </p>
-          <p>Al cuadrado:<span> {{exponential}}</span></p>
-        </div>
-      </div>
+    <div id="app">
+      <app-table :items="products" :labels="labels"></app-table>
     </div>
   </body>
 </html>
