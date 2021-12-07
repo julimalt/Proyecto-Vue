@@ -24,6 +24,7 @@
   </v-simple-table>
 </template>
 <script>
+
   export default {
     data () {
       return {
