@@ -2,31 +2,31 @@
     {
       "nombre": "Producto uno",
       "precio": 100,
-      "id": 1
+      "descripcion": "Descripcion del producto"
     },
     {
       "nombre": "Producto dos",
       "precio": 200,
-      "id": 2
+      "descripcion": "Descripcion del producto"
     },
     {
       "nombre": "Producto tres",
       "precio": 300,
-      "id": 3
+      "descripcion": "Descripcion del producto"
     },
     {
       "nombre": "Producto cuatro",
       "precio": 400,
-      "id": 4
+      "descripcion": "Descripcion del producto"
     },
     {
       "nombre": "Producto cinco",
       "precio": 500,
-      "id": 5
+      "descripcion": "Descripcion del producto"
     },
     {
       "nombre": "Producto seis",
       "precio": 600,
-      "id": 6
+      "descripcion": "Descripcion del producto"
     }
   ]
