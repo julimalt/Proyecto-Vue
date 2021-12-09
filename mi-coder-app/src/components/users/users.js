@@ -1,4 +1,4 @@
-import data from "../../data.json";
+import data from "../../data/data.json";
 import UsersForm from "../form/index.vue";
 
 export default {
