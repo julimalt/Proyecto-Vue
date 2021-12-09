@@ -27,7 +27,7 @@
               src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
             ></v-img>
 
-            <v-card-title>{{this.title}}</v-card-title>
+            <v-card-title>{{product.nombre}}</v-card-title>
 
             <v-card-text>
               <v-row align="center" class="mx-0">
@@ -43,9 +43,9 @@
                 <div class="grey--text ms-4">4.5 (413)</div>
               </v-row>
 
-              <div class="my-4 text-subtitle-1">$ {{this.precio}}</div>
+              <div class="my-4 text-subtitle-1">$ {{product.precio}}</div>
 
-              <div>{{this.descripcion}}</div>
+              <div>{{product.descripcion}}</div>
             </v-card-text>
 
             <v-divider class="mx-4"></v-divider>
