@@ -1,32 +1,38 @@
 [
     {
-      "nombre": "Producto uno",
-      "precio": 100,
-      "descripcion": "Descripcion del producto"
+      "nombre": "Acción",
+      "precio": 3390,
+      "descripcion": "La posibilidad de elegir una actividad emocionante e innovadora",
+      "imagen": "mi-coder-app/src/assets/accion.jpg"
     },
     {
-      "nombre": "Producto dos",
-      "precio": 200,
-      "descripcion": "Descripcion del producto"
+      "nombre": "Relax",
+      "precio": 3200,
+      "descripcion": "Sesiones de masajes y tratamientos corporales exclusivos",
+      "imagen": "mi-coder-app/src/assets/relax.jpg" 
     },
     {
-      "nombre": "Producto tres",
-      "precio": 300,
-      "descripcion": "Descripcion del producto"
+      "nombre": "Experiencia Gourmet",
+      "precio": 5140,
+      "descripcion": "Cenas únicas para dos personas.",
+      "imagen": "mi-coder-app/src/assets/gourmet.jfif"
     },
     {
-      "nombre": "Producto cuatro",
-      "precio": 400,
-      "descripcion": "Descripcion del producto"
+      "nombre": "Adrenalina",
+      "precio": 4490,
+      "descripcion": "Actividades sorprendentes para una, dos o más personas",
+      "imagen": "mi-coder-app/src/assets/adrenalina.jpg"
     },
     {
-      "nombre": "Producto cinco",
-      "precio": 500,
-      "descripcion": "Descripcion del producto"
+      "nombre": "Grande Cuisine",
+      "precio": 7600,
+      "descripcion": "Los restaurantes más exclusivos y prestigiosos de Argentina",
+      "imagen": "mi-coder-app/src/assets/cuisine.jfif"
     },
     {
-      "nombre": "Producto seis",
-      "precio": 600,
-      "descripcion": "Descripcion del producto"
+      "nombre": "Extreme",
+      "precio": 7500,
+      "descripcion": "Aventuras extremas para desafiar los límites",
+      "imagen": "mi-coder-app/src/assets/extreme.jfif"
     }
   ]
