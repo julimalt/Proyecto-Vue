@@ -32,5 +32,10 @@ export default new VueRouter({
       name: "form",
       component: () => import("./components/form/form.vue"),
     },
+    {
+      path: "/consults",
+      name: "Consults",
+      component: () => import("./components/form/consultsList.vue"),
+    },
   ],
 });

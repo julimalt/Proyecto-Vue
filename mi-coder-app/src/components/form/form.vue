@@ -36,10 +36,15 @@
     </v-btn>
 
     <v-btn color="error" class="mr-4" @click="reset"> Limpiar </v-btn>
+
+        <v-btn color="primary" class="mr-4" @click="verConsultas"> Ver consultas </v-btn>
+
   </v-form>
 </template>
 
 <script>
+    import axios from 'axios'
+
   export default {
     data: () => ({
       valid: true,
@@ -71,16 +76,36 @@
       ],
     }),
 
-    methods: {
-      validate() {
-        this.$refs.form.validate();
-      },
+     methods: {
+        validate () {
+        if(this.$refs.form.validate()) {
+        const newConsult = {
+            name:  this.name,
+            lastname: this.lastname, 
+            email: this.email,
+            mensaje: this.mensaje,
+        }
+        
+        this.agregar(newConsult)
+        this.$refs.form.reset()
+        }
+      }, 
+
       reset() {
-        this.$refs.form.reset();
+          this.$refs.form.reset()
+      }, 
+      
+      verConsultas  () {
+          this.$router.push('/consults')
       },
-      resetValidation() {
-        this.$refs.form.resetValidation();
-      },
-    },
-  };
+
+      agregar(consults) {
+          axios.post('https://61b92f2138f69a0017ce5eef.mockapi.io/consults', consults)
+          .then((response) => {
+                console.log(response.data) 
+                this.snackbar = true})
+          .catch((error) => console.log(error))
+      }
+    }, 
+}
 </script>
