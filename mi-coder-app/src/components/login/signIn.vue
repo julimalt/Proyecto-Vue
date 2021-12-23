@@ -23,6 +23,9 @@
                 type="password"
                 required></v-text-field>
             </v-flex>
+          <v-flex>
+              <v-select id="rol" v-model="rol" class="custom-select" label="Elegir un rol" :items="items"/>
+            </v-flex>  
             <v-flex class="text-xs-center" mt-5>
               <v-btn outlined color="orange darken-3" type="submit">Sign In</v-btn>
             </v-flex>
@@ -34,5 +37,44 @@
 </template>
 
 <script>
-export default {};
+const axios = require("axios");
+
+export default {
+	name: "LoginView",
+	data: ()=>({items: ['Admin', 'User'], function () {
+		return {
+			users: [],
+			mail: "",
+			contra: "",
+			errors: [],
+			rol: "",
+		};
+	},}),
+  
+	methods: {
+		findUser() {
+			return this.users.find(
+				(user) =>
+					user.email === this.mail &&
+					this.contra === user.password &&
+					user.rol === this.rol,
+			);
+		},
+		login() {
+			axios
+				.get("https://61b92f2138f69a0017ce5eef.mockapi.io/users")
+				.then((response) => {
+					console.log(response);
+					this.users = response.data;
+					if (this.findUser()) {
+						this.$router.push(
+							this.rol === "admin" ? "/admin/dashboard" : "/products",
+						);
+					} else {
+						console.log("TODO: no se loguea");
+					}
+				});
+		},
+	},
+};
 </script>
