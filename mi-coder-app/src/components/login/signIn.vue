@@ -12,6 +12,7 @@
                 name="email"
                 label="Email"
                 id="email"
+                v-model="email"
                 type="email"
                 required></v-text-field>
             </v-flex>
@@ -20,6 +21,7 @@
                 name="password"
                 label="Password"
                 id="password"
+                v-model="password"
                 type="password"
                 required></v-text-field>
             </v-flex>
@@ -31,6 +33,7 @@
             </v-flex>
           </v-layout>
         </form>
+        <router-link to="/signUp">¿No tenes cuenta? Crea una aquí!</router-link>
       </v-flex>
     </v-layout>
   </v-container>
@@ -40,13 +43,11 @@
 const axios = require("axios");
 
 export default {
-	name: "LoginView",
 	data: ()=>({items: ['Admin', 'User'], function () {
 		return {
 			users: [],
-			mail: "",
-			contra: "",
-			errors: [],
+			email: "",
+			password: "",
 			rol: "",
 		};
 	},}),
@@ -55,8 +56,8 @@ export default {
 		findUser() {
 			return this.users.find(
 				(user) =>
-					user.email === this.mail &&
-					this.contra === user.password &&
+					user.email === this.email &&
+					this.password === user.password &&
 					user.rol === this.rol,
 			);
 		},
@@ -68,7 +69,7 @@ export default {
 					this.users = response.data;
 					if (this.findUser()) {
 						this.$router.push(
-							this.rol === "admin" ? "/admin/dashboard" : "/products",
+							this.rol === "Admin" ? "/consults" : "/",
 						);
 					} else {
 						console.log("TODO: no se loguea");

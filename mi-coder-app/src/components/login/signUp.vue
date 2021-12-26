@@ -5,13 +5,14 @@
         <h1>Sign Up</h1>
       </v-flex>
       <v-flex xs12 sm6 offset-sm3 mt-3>
-        <form>
+        <form v-on:submit.prevent="register">
           <v-layout column>
             <v-flex>
               <v-text-field
                 name="name"
                 label="Name"
                 id="name"
+                v-model="name"
                 type="name"
                 required></v-text-field>
             </v-flex>
@@ -20,6 +21,7 @@
                 name="lastName"
                 label="Last Name"
                 id="lastName"
+                v-model="lastName"
                 type="lastName"
                 required></v-text-field>
             </v-flex>
@@ -28,14 +30,19 @@
                 name="email"
                 label="Email"
                 id="email"
+                v-model="email"
                 type="email"
                 required></v-text-field>
             </v-flex>
+              <v-flex>
+              <v-select id="rol" v-model="rol" class="custom-select" label="Elegir un rol" :items="items"/>
+            </v-flex>  
             <v-flex>
               <v-text-field
                 name="password"
                 label="Password"
                 id="password"
+                v-model="password"
                 type="password"
                 required></v-text-field>
             </v-flex>
@@ -59,5 +66,20 @@
 </template>
 
 <script>
-export default {};
+const axios = require("axios");
+
+export default {	
+  data: ()=>({items: ['Admin', 'User']}),
+
+ methods: {
+ register() {
+		axios
+		.post(
+		"https://61b92f2138f69a0017ce5eef.mockapi.io/users",
+		{ name:this.name, lastName:this.lastName, email: this.email, password: this.password, rol: this.rol },
+				)
+				.then(() => this.$router.push("/"));
+		},
+	},
+}
 </script>
