@@ -1,38 +1,44 @@
 [
     {
-      "nombre": "Acción",
-      "precio": 3390,
-      "descripcion": "La posibilidad de elegir una actividad emocionante e innovadora",
-      "imagen": "@/../src/assets/accion.jpg"
+      "name": "Acción",
+      "price": 3390,
+      "description": "La posibilidad de elegir una actividad emocionante e innovadora",
+      "image": "https://i.postimg.cc/hG2PPSxH/accion.jpg",
+      "id": "1"
     },
     {
-      "nombre": "Relax",
-      "precio": 3200,
-      "descripcion": "Sesiones de masajes y tratamientos corporales exclusivos",
-      "imagen": "/src/assets/relax.jpg" 
+      "name": "Relax",
+      "price": 3200,
+      "description": "Sesiones de masajes y tratamientos corporales exclusivos",
+      "image": "https://i.postimg.cc/tRZPffGX/relax.jpg",
+      "id":"2" 
     },
     {
-      "nombre": "Experiencia Gourmet",
-      "precio": 5140,
-      "descripcion": "Cenas únicas para dos personas.",
-      "imagen": "/src/assets/gourmet.jfif"
+      "name": "Experiencia Gourmet",
+      "price": 5140,
+      "description": "Cenas únicas para dos personas.",
+      "image": "https://i.postimg.cc/mhWT6hfF/gourmet.jpg",
+      "id":"3"
     },
     {
-      "nombre": "Adrenalina",
-      "precio": 4490,
-      "descripcion": "Actividades sorprendentes para una, dos o más personas",
-      "imagen": "/src/assets/adrenalina.jpg"
+      "name": "Adrenalina",
+      "price": 4490,
+      "description": "Actividades sorprendentes para una, dos o más personas",
+      "image": "https://i.postimg.cc/vTVQzfjs/adrenalina.jpg",
+      "id":"4"
     },
     {
-      "nombre": "Grande Cuisine",
-      "precio": 7600,
-      "descripcion": "Los restaurantes más exclusivos y prestigiosos de Argentina",
-      "imagen": "/src/assets/cuisine.jfif"
+      "name": "Grande Cuisine",
+      "price": 7600,
+      "description": "Los restaurantes más exclusivos y prestigiosos de Argentina",
+      "image": "https://i.postimg.cc/9MzXDvYz/cuisine.jpg",
+      "id":"5"
     },
     {
-      "nombre": "Extreme",
-      "precio": 7500,
-      "descripcion": "Aventuras extremas para desafiar los límites",
-      "imagen": "/src/assets/extreme.jfif"
+      "name": "Extreme",
+      "price": 7500,
+      "description": "Aventuras extremas para desafiar los límites",
+      "image": "https://i.postimg.cc/DZDvLBx6/extreme.jpg",
+      "id":"6"
     }
   ]

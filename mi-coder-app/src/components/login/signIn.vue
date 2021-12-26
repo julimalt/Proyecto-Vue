@@ -5,7 +5,7 @@
         <h1>Sign In</h1>
       </v-flex>
       <v-flex xs12 sm6 offset-sm3 mt-3>
-        <form>
+        <form v-on:submit.prevent="login">
           <v-layout column>
             <v-flex>
               <v-text-field
@@ -69,7 +69,7 @@ export default {
 					this.users = response.data;
 					if (this.findUser()) {
 						this.$router.push(
-							this.rol === "Admin" ? "/consults" : "/",
+							this.rol == "Admin" ? "/adminDashboard" : "/",
 						);
 					} else {
 						console.log("TODO: no se loguea");

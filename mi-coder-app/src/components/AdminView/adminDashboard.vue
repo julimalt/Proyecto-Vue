@@ -1,38 +1,88 @@
 <template>
-	<div>
-		<FormComponent
-			@newUser="newProductAdded"
-			@editTheProduct="editTheProduct"
-			:productToEdit="productToEdit"
-		/>
-		<TableComponent
-			:data="products"
-			@deleteProduct="deleteProduct"
-			@editProduct="editProduct"
-		/>
-	</div>
+  <section class="home">
+    <v-card class="mx-auto">
+		<v-container>
+			<v-btn
+                color="orange darken-3"
+                dark
+                absolute
+                right
+                fab
+				@click="newProductAdded()"
+              >
+                <v-icon>mdi-plus</v-icon>
+              </v-btn>
+		</v-container>
+      <v-container fluid>
+        <v-row dense>
+          <v-col v-for="product in products" :key="product.id" :cols="flex">
+            <v-card class="mx-auto my-12" max-width="374">
+              <template slot="progress">
+                <v-progress-linear
+                  color="deep-purple"
+                  height="10"
+                  indeterminate
+                ></v-progress-linear>
+              </template>
+            
+              <v-img :src="product.image"
+                height="250"
+                 />
+
+              <v-card-title>{{product.name}}</v-card-title>
+
+              <v-card-text>
+                <v-row align="center" class="mx-0">
+                  <v-rating
+                    :value="4.5"
+                    color="amber"
+                    dense
+                    half-increments
+                    readonly
+                    size="14"
+                  ></v-rating>
+
+                  <div class="grey--text ms-4">4.5 (413)</div>
+                </v-row>
+
+                <div class="my-4 text-subtitle-1">$ {{product.price}}</div>
+
+                <div>{{product.description}}</div>
+              </v-card-text>
+
+              <v-divider class="mx-4"></v-divider>
+
+              <v-card-actions>
+                <v-btn color="red" text @click="deleteProduct(product)">
+                  Eliminar
+                </v-btn>
+				<v-icon color="orange darken-3" text @click="editProduct(product)">
+					mdi-lead-pencil
+				</v-icon>
+
+              </v-card-actions>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-card>
+  </section>
 </template>
 
 <script>
-// import FormComponent from "./Components/FormComponent.vue";
-import TableComponent from "./Components/TableComponent.vue";
+
 const axios = require("axios");
-export default {
-	name: "AdminDashboardView",
-	components: {
-		FormComponent,
-		TableComponent,
-	},
-	data: function () {
-		return {
-			products: [],
-			productToEdit: {},
-			loading: false,
-		};
-	},
-	methods: {
+
+  export default {
+    components: {},
+    props: [],
+    data: () => ({
+      products: [],
+      flex: 4,
+    }),
+
+   methods: {
 		getAllProducts() {
-			this.loading = true;
 			axios
 				.get(
 					"https://61b92f2138f69a0017ce5eef.mockapi.io/products",
@@ -40,41 +90,30 @@ export default {
 				.then((response) => {
 					this.products = response.data;
 				})
-				.finally(() => (this.loading = false));
 		},
 		newProductAdded(product) {
-			this.loading = true;
 			axios
 				.post(
 					"https://61b92f2138f69a0017ce5eef.mockapi.io/products",
 					product,
 				)
-				.then(() => {
-					this.getAllProducts().finally(() => (this.loading = false));
-				});
 		},
-		deleteProduct(id) {
-			this.loading = true;
+		deleteProduct(product) {
 			axios
 				.delete(
-					`https://61b92f2138f69a0017ce5eef.mockapi.io/products/${id}`,
-				)
-				.then(() => {
-					this.getAllProducts().finally(() => (this.loading = false));
-				});
+					`https://61b92f2138f69a0017ce5eef.mockapi.io/products/${product.id}`,)
+					.then(()=> location.reload())
 		},
 		editProduct(product) {
 			this.productToEdit = product;
 		},
 		editTheProduct(product) {
-			this.loading = true;
 			axios
 				.put(
 					`https://61b92f2138f69a0017ce5eef.mockapi.io/products/${product.id}`,
 					product,
 				)
 				.then(() => this.getAllProducts())
-				.finally(() => (this.loading = false));
 		},
 	},
 	mounted: function () {

@@ -37,5 +37,10 @@ export default new VueRouter({
       name: "Consults",
       component: () => import("./components/form/consultsList.vue"),
     },
+    {
+      path: "/adminDashboard",
+      name: "adminDashboard",
+      component: () => import("./components/adminView/adminDashboard.vue"),
+    },
   ],
 });

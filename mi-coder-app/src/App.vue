@@ -18,9 +18,9 @@
         </v-btn>
       </v-toolbar-items>
     </v-toolbar>
-    <v-content>
+    <v-main>
       <router-view></router-view>
-    </v-content>
+    </v-main>
 
      <v-footer dark padless>
     <v-card class="flex" flat tile>
