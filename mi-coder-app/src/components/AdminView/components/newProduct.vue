@@ -52,7 +52,7 @@
  </v-form>
             </v-card-text>
             <v-card-actions class="justify-end">
-			<button type="submit" color="orange darken-3">
+			<button type="submit" class="btn btn-outline-primary">
 				{{ buttonLabel }}
 			</button>
             </v-card-actions>
@@ -107,7 +107,7 @@ export default {
 			};
 			this.id !== ""
 				? this.$emit("editTheProduct", { ...newProduct, id: this.id })
-				: this.$emit("newUser", newProduct);
+				: this.$emit("newProduct", newProduct);
 			this.cleanForm();
 		},
 		cleanForm() {
