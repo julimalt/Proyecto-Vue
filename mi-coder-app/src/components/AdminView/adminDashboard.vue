@@ -55,12 +55,17 @@ import homeAdmin from "./components/homeAdmin.vue"
 					"https://61b92f2138f69a0017ce5eef.mockapi.io/products",
 					product,
 				)
+				.then(() => {
+					this.getAllProducts()
+				});
 		},
 		deleteProduct(product) {
 			axios
 				.delete(
 					`https://61b92f2138f69a0017ce5eef.mockapi.io/products/${product.id}`,)
-					.then(()=> location.reload())
+					.then(() => {
+					this.getAllProducts()
+				});
 		},
 		editProduct(product) {
 			this.productToEdit = product;

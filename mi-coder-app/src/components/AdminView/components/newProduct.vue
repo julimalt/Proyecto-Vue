@@ -3,18 +3,7 @@
 		<form ref="userForm" @submit="onSubmit">
 			<div>
   <v-row justify="space-around">
-    <v-col cols="auto">
-      <v-dialog
-        transition="dialog-bottom-transition"
-        max-width="600"
-      > 
-        <template v-slot:activator="{ on, attrs }">
-          <v-btn
-            color="orange darken-3"
-            v-bind="attrs"
-            v-on="on"
-          >Agregar Producto</v-btn>
-        </template> 
+    <v-col>	
          <template>
           <v-card>
             <v-toolbar
@@ -52,13 +41,17 @@
  </v-form>
             </v-card-text>
             <v-card-actions class="justify-end">
-			<button type="submit" class="btn btn-outline-primary">
-				{{ buttonLabel }}
-			</button>
+			<v-btn
+			type="submit"
+              color="warning"
+              dark
+            >
+             {{ buttonLabel }}           
+            </v-btn>
+				
             </v-card-actions>
           </v-card>
         </template>
-      </v-dialog>
     </v-col>
   </v-row>
             </div>	

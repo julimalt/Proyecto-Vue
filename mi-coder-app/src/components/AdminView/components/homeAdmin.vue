@@ -44,9 +44,11 @@
                 <v-btn color="red" text @click="deleteProduct(product)">
                   Eliminar
                 </v-btn>
+                <v-btn>
 				<v-icon color="orange darken-3" text @click="editProduct(product)">
 					mdi-lead-pencil
 				</v-icon>
+                </v-btn>
 
               </v-card-actions>
             </v-card>
@@ -66,7 +68,7 @@ export default {
     
 	},
     data: () => ({
-      products: [],
+      // products: [],
       flex: 4,}),
 
 	methods: {
