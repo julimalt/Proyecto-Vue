@@ -35,7 +35,7 @@ import homeAdmin from "./components/homeAdmin.vue"
 		};
 	},
     props: [],
-
+ 
    methods: {
 		getAllProducts() {
 			axios

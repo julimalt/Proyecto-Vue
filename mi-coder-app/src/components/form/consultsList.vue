@@ -1,65 +1,53 @@
 <template>
-    <v-container>
-        <h1>Consultas</h1>
-    <div v-if="prog" class="text-center">
-          <v-progress-linear
-            color="primary"
-            indeterminate
-            rounded
-            height="6"
-          ></v-progress-linear>
-    </div>
-    <v-data-table :headers="headers" :items="consults" class="mx-4" v-else> 
-        <template>
-            {{item.name}}
-        </template>
-    </v-data-table>
-    <v-btn dark color="primary" class="mt-4" @click="volver()">volver</v-btn>
-    </v-container>
+  <v-simple-table dense>
+    <template v-slot:default>
+      <thead>
+        <tr>
+          <th class="text-left">
+            Name
+          </th>
+          <th class="text-left">
+            LastName
+          </th>
+           <th class="text-left">
+            Email
+          </th>
+           <th class="text-left">
+            Consult
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          v-for="consult in consults"
+          :key="consult.id"
+        >
+          <td>{{ consult.name }}</td>
+          <td>{{ consult.lastname }}</td>
+          <td>{{ consult.email }}</td>
+          <td>{{ consult.mensaje }}</td>
+
+        </tr>
+      </tbody>
+    </template>
+  </v-simple-table>
 </template>
 
 <script>
-    import {mapGetters, mapActions} from 'vuex'
-    import axios from 'axios'
-    export default {
-        
-        data() {
-            return {
-                prog: true
-            }
-        },
 
-        computed: {
-            ...mapGetters(['consults', 'headers'])
-        },
+  export default {
+    components: {},
+    props: [],
+    data: () => ({
+      consults: [],
+    }),
 
-        methods: {
-            ...mapActions(['setConsults']),
-            getConsults() {
-                axios.get('https://61b92f2138f69a0017ce5eef.mockapi.io/consults')
-                .then((response) => {
-                    this.setConsults(response.data)
-                    this.prog = false
-                })
-                .catch((error) => console.log(error))
-            }, 
-
-            volver() {
-                this.$router.push('/')
-            }
-        },
-
-
-        mounted () {
-            this.getConsults()
-        },
-
-        
-    }
+    computed: {},
+    mounted() {fetch("https://61b92f2138f69a0017ce5eef.mockapi.io/consults")
+      .then((res) => res.json())
+      .then((data) => {
+        this.consults = data;
+      });},
+    methods: {},
+  };
 </script>
-
-<style scoped>
-    h1 {
-        text-align: center;
-    }
-</style>

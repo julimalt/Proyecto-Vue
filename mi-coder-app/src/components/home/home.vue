@@ -5,14 +5,6 @@
         <v-row dense>
           <v-col v-for="product in products" :key="product.id" :cols="flex">
             <v-card class="mx-auto my-12" max-width="374">
-              <template slot="progress">
-                <v-progress-linear
-                  color="deep-purple"
-                  height="10"
-                  indeterminate
-                ></v-progress-linear>
-              </template>
-
               <v-img :src="product.image"
                 height="250"
                  />
@@ -71,7 +63,6 @@
       .then((res) => res.json())
       .then((data) => {
         this.products = data;
-        console.log(data);
       });},
     methods: {},
   };

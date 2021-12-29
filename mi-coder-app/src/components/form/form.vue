@@ -67,13 +67,13 @@
         (v) => !!v || "E-mail es requerido",
         (v) => /.+@.+\..+/.test(v) || "El E-mail debe ser valido",
       ],
-      mensaje: "",
-      mensajeRules: [
-        (v) => !!v || "El mensaje es requerido",
-        (v) =>
-          (v && v.length <= 100) ||
-          "El mensaje debe tener menos de 100 caracteres",
-      ],
+      // mensaje: "",
+      // mensajeRules: [
+      //   (v) => !!v || "El mensaje es requerido",
+      //   (v) =>
+      //     (v && v.length <= 100) ||
+      //     "El mensaje debe tener menos de 100 caracteres",
+      // ],
     }),
 
      methods: {

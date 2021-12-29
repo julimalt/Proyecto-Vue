@@ -68,7 +68,6 @@ export default {
     
 	},
     data: () => ({
-      // products: [],
       flex: 4,}),
 
 	methods: {
