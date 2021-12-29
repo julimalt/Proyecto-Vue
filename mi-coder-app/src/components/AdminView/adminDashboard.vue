@@ -27,17 +27,14 @@ import homeAdmin from "./components/homeAdmin.vue"
     homeAdmin
 	},
 
-	products: function () {
+	data: function () {
 		return {
 		products: [],
+		flex: 4,
 		productToEdit: {},
 		};
 	},
     props: [],
-    data: () => ({
-      products: [],
-      flex: 4,
-    }),
 
    methods: {
 		getAllProducts() {

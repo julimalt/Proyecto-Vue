@@ -13,7 +13,6 @@
             <v-card-text>
               <v-form
     ref="form"
-    v-model="valid"
     lazy-validation
   >
     <v-text-field
