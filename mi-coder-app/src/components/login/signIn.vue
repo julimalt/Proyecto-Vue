@@ -65,7 +65,14 @@ export default {
 			axios
 				.get("https://61b92f2138f69a0017ce5eef.mockapi.io/users")
 				.then((response) => {
-					console.log(response);
+					this.$store
+          .dispatch("authentication", {
+					mail: this.mail,
+					password: this.contra,
+				})
+				.then(() => {
+					this.$router.push("/adminDashboard");
+				})
 					this.users = response.data;
 					if (this.findUser()) {
 						this.$router.push(
@@ -76,6 +83,11 @@ export default {
 					}
 				});
 		},
+	},
+  beforeCreate() {
+		if (this.$store.getters.isAuthenticated) {
+			this.$router.push("/admin/dashboard");
+		}
 	},
 };
 </script>

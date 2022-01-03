@@ -101,10 +101,6 @@
 
       agregar(consults) {
           axios.post('https://61b92f2138f69a0017ce5eef.mockapi.io/consults', consults)
-          .then((response) => {
-                console.log(response.data) 
-                this.snackbar = true})
-          .catch((error) => console.log(error))
       }
     }, 
 }

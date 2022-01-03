@@ -33,7 +33,7 @@
               <v-divider class="mx-4"></v-divider>
 
               <v-card-actions>
-                <v-btn color="orange darken-2" text @click="reserve">
+                <v-btn color="orange darken-2" text @click="agregarAlCarrito">
                   Añadir al carrito
                 </v-btn>
               </v-card-actions>
@@ -64,6 +64,10 @@
       .then((data) => {
         this.products = data;
       });},
-    methods: {},
-  };
+  methods: {
+		agregarAlCarrito() {
+			this.$store.dispatch("addToCarrito", this.product);
+		},
+  },
+  }
 </script>

@@ -1,5 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+// import store from "../src/components/store/index";
 
 Vue.use(VueRouter);
 
@@ -41,6 +42,9 @@ export default new VueRouter({
       path: "/adminDashboard",
       name: "adminDashboard",
       component: () => import("./components/adminView/adminDashboard.vue"),
+      meta: {
+        requiresAuth: true,
+      },
     },
   ],
 });

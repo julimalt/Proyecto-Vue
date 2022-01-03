@@ -18,36 +18,13 @@
         </v-btn>
       </v-toolbar-items>
     </v-toolbar>
-    <v-main>
-      <router-view></router-view>
-    </v-main>
+    </v-app>
+    </template>
 
-     <v-footer dark padless>
-    <v-card class="flex" flat tile>
-      <v-card-title class="orange darken-3">
-        <strong class="subheading"
-          >Contactanos!</strong
-        >
+    <script>
+        
+ export default {
 
-        <v-spacer></v-spacer>
-
-         <v-btn
-          color="transparent"
-          v-for="icon in icons"
-          :key="icon.title"
-          :to="icon.path">
-          <v-icon left light>{{ icon.icon }}</v-icon>
-          {{ icon.title }}
-        </v-btn>
-      </v-card-title>
-    </v-card>
-  </v-footer>
-  </v-app>
-</template>
-
-<script>
-export default {
-  name: "App",
   data(){
     return {
       appTitle: 'Not THAT Bigbox',
@@ -57,8 +34,7 @@ export default {
           { title: 'Login', path: '/signin', icon: 'mdi-account-lock-open' },
           { title: 'Cart', path: '/cart', icon: 'mdi-cart' },
      ],
-    icons: [{ title: 'Contact us', path: '/form', icon: 'mdi-cellphone-information' }],
     }
   },
 };
-</script>
+     </script>
