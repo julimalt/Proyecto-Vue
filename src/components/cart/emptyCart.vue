@@ -19,3 +19,9 @@ export default {
 };
 </script>
 
+<style scoped>
+.empty-carrito{
+margin-top: 5em;
+}
+</style>
+

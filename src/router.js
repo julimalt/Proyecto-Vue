@@ -1,6 +1,5 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-// import store from "../src/components/store/index";
 
 Vue.use(VueRouter);
 

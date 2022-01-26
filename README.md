@@ -1,4 +1,4 @@
-# mi-coder-app
+# not-that-bigbox
 
 ## Project setup
 ```

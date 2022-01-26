@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-layout row wrap>
       <v-flex xs12 class="text-xs-center" mt-5>
-        <h1>Sign Up</h1>
+       <img :src="img" :alt="'banner sign up'" class="img"  />
       </v-flex>
       <v-flex xs12 sm6 offset-sm3 mt-3>
         <form v-on:submit.prevent="register">
@@ -66,10 +66,16 @@
 </template>
 
 <script>
+import signUp from "../../assets/signUp.png"
 const axios = require("axios");
 
 export default {	
-  data: ()=>({items: ['Admin', 'User']}),
+ data: ()=>({items: ['Admin', 'User'], function () {
+		return {
+	img: signUp
+		};
+	},
+    img: signUp}),
 
  methods: {
  register() {
@@ -83,3 +89,12 @@ export default {
 	},
 }
 </script>
+
+<style scoped>
+
+.img{
+display: block; 
+margin: auto;
+}
+
+</style>

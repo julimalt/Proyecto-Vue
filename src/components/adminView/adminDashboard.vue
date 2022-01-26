@@ -77,7 +77,14 @@ import homeAdmin from "./components/homeAdmin.vue"
 		},
 	},
 	mounted: function () {
-		this.getAllProducts();
+		const rol = this.$store.state.user.rol
+		if (rol == "Admin"){
+			this.getAllProducts();
+		}
+		else{ 
+			this.$router.push("/");
+		}
+		
 	},
 };
 </script>

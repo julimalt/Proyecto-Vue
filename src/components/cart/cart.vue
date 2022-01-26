@@ -1,7 +1,7 @@
 <template>
 	<section class="carrito-container">
-		<emptyCart v-if="$store.getters.numberOfProducts === 0" />
-		<cartProducts v-else :products="$store.getters.getCarrito" />
+		<emptyCart v-if="$store.state.cart.products.length === 0" />
+		<cartProducts v-else :products="$store.state.cart.products" />
 	</section>
 </template>
 
