@@ -51,10 +51,10 @@
           Pagar
         </v-btn>
       </template>
-      <v-card class="modal">
-        <v-card-title class="text-h5">
+      <v-card>
+        <v-card-text class="text" >
           Gracias por su compra!
-        </v-card-title>
+        </v-card-text>
         <v-card-text class="text">Su N° Orden de Compra es: {{orderId}}</v-card-text>
         <v-card-text class="text">Dirigite a un Rapipago o Pago facil con tu numero de Orden, abonas, y listo!!</v-card-text>
         <v-card-text class="text">Disfrutas de tu voucher cuando quieras!!</v-card-text>
@@ -117,12 +117,10 @@ export default {
     </script>
 
     <style scoped>
-    .modal{
-      width: fit-content;
-    }
     .text{
       font-weight: bold;
       font-size: larger;
+      text-align: center;
     }
     .table{
       font-weight: bold;
